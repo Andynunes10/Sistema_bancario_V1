@@ -1,3 +1,17 @@
+"""
+              Sistema Bancário Simples - Versão 1.0
+Implementa operações básicas de um banco: depósito, saque e extrato.
+
+"""
+# Constantes
+LIM_SAQ = 3
+LIM_VAL_SAQ = 500
+
+# Variaveis globais
+saldo = 0
+extrato = ""
+num_saq = 0
+
 menu = """
 -------- Menu --------
 /                    /
@@ -9,12 +23,6 @@ menu = """
 ----------------------    
 
 => """
-
-saldo = 0
-limite = 500
-extrato = ""
-num_saq = 0
-LIM_SAQ = 3
 
 while True:
 
@@ -40,8 +48,8 @@ while True:
             if valor_saq > saldo:
                 print("Saldo insulficiente para esta operaçao.")
 
-            elif valor_saq > limite:
-                print(f"O valor do saque excede o limite de R$ {limite:.2f} por operação.")
+            elif valor_saq > LIM_VAL_SAQ:
+                print(f"O valor do saque excede o limite de R$ {LIM_VAL_SAQ:.2f} por operação.")
 
             else:
                 saldo -= valor_saq
