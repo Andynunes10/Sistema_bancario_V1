@@ -1,10 +1,12 @@
 menu = """
---------Menu--------
-
-    [1] Depositar
-    [2] Sacar
-    [3] Extrato
-    [0] Sair
+-------- Menu --------
+/                    /
+/   [1] Depositar    /
+/   [2] Sacar        /
+/   [3] Extrato      /
+/   [0] Sair         /
+/                    /
+----------------------    
 
 => """
 
@@ -19,14 +21,15 @@ while True:
     opcao = input(menu)
 
     if opcao == "1":
-        print("Depositar")
+        print("\n=================== Depositar ===================")
         valor_dep = int(input("Qual o valor desejado para o deposito? R$  "))
         saldo += valor_dep
         print(f"Deposito de R$ {valor_dep:.2f} realizado com sucesso.")
         extrato += f"Deposito: R$ {valor_dep:.2f}\n"
+        print("=================================================")
 
     elif opcao == "2":
-        print("Sacar")
+        print("\n=================== Sacar ===================")
 
         if num_saq >= LIM_SAQ:
             print(f"Limite de {LIM_SAQ} saques diários atingido.")
@@ -46,6 +49,7 @@ while True:
                 num_saq += 1
                 print(f"Saque de R$ {valor_saq:.2f} realizado com sucesso.")
                 print(f"Saques restantes hoje: {LIM_SAQ - num_saq}")
+                print("=============================================")
 
     elif opcao == "3":
         print("\n============== Extrato ==============")
@@ -58,7 +62,7 @@ while True:
         print("=====================================")
 
     elif opcao == "0":
-        print("Obrigado por utilizar nossos serviços")
+        print("Obrigado por utilizar nossos serviços!")
         break
 
     else:
