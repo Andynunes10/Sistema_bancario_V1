@@ -22,6 +22,7 @@ while True:
         print("Depositar")
         valor_dep = int(input("Qual o valor desejado para o deposito? R$  "))
         saldo += valor_dep
+        print(f"Deposito de R$ {valor_dep:.2f} realizado com sucesso.")
         extrato += f"Deposito: R$ {valor_dep:.2f}\n"
 
     elif opcao == "2":
@@ -47,13 +48,14 @@ while True:
                 print(f"Saques restantes hoje: {LIM_SAQ - num_saq}")
 
     elif opcao == "3":
-        print("Extrato")
+        print("\n============== Extrato ==============")
 
         if extrato == "":
-            print("Não foram realizadas movimentações.")
+                print("Não foram realizadas movimentações.")
         else:
-            print(extrato)
-            print(f"Saldo atual: R$ {saldo:.2f}")
+                print(extrato)
+                print(f"Saldo atual: R$ {saldo:.2f}")
+        print("=====================================")
 
     elif opcao == "0":
         print("Obrigado por utilizar nossos serviços")
